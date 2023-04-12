@@ -5,12 +5,12 @@ namespace Library
 {
     public class AppointmentService
     {
-        public static string CreateAppointment(string name, string id, string phoneNumber, DateTime date, string appoinmentPlace, string doctorName)
+        public static string CreateAppointment(string personName, string id, string personPhoneNumber, DateTime date, string appoinmentPlace, string doctorName)
         {
             StringBuilder stringBuilder = new StringBuilder("Scheduling appointment...\n");
             Boolean isValid = true;
 
-            if (string.IsNullOrEmpty(name))
+            if (string.IsNullOrEmpty(personName))
             {
                 stringBuilder.Append("Unable to schedule appointment, 'name' is required\n");
                 isValid = false;
@@ -22,7 +22,7 @@ namespace Library
                 isValid = false;
             }
 
-            if (string.IsNullOrEmpty(phoneNumber))
+            if (string.IsNullOrEmpty(personPhoneNumber))
             {
                 stringBuilder.Append("Unable to schedule appointment, 'phone number' is required\n");
                 isValid = false;
